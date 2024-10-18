@@ -6,14 +6,13 @@ icon.addEventListener("click", () => {
 
 function changeFormTheme(form) {
   let theme = form.getAttribute("data-theme");
-const localtheme=localStorage.getItem("theme");
+  const localtheme = localStorage.getItem("theme");
 
   if (localtheme === "dark") {
     form.setAttribute("data-theme", "light");
-    localStorage.setItem("theme","light")
+    localStorage.setItem("theme", "light");
   } else {
     form.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme","dark")
-
+    localStorage.setItem("theme", "dark");
   }
 }
