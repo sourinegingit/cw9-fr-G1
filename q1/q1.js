@@ -1,5 +1,8 @@
 const icon = document.querySelector(".icon");
 const form = document.querySelector(".form");
+let inputName = document.getElementById("name");
+let inputPassword = document.getElementById("pss");
+let inputEmail = document.getElementById("email");
 
 let submit = document.getElementById("submit");
 icon.addEventListener("click", () => {
@@ -20,11 +23,22 @@ function changeFormTheme(form) {
 }
 
 submit.addEventListener("click", (e) => {
-    e.preventDefault();
-  let name = document.getElementById("name").value;
-  let password = document.getElementById("pss").value;
-  let email = document.getElementById("email").value;
-  let data={name,password,email};
-  localStorage.setItem("user",JSON.stringify(data));
-  
+  e.preventDefault();
+  updateUser();
+ clearForm(form);
 });
+
+function clearForm(form) {
+  form.reset();
+}
+
+
+function updateUser() {
+    let nameValue = inputName.value;
+    let passwordValue = inputPassword.value;
+    let emailValue = inputEmail.value;
+  
+    let data = { name: nameValue, password: passwordValue, email: emailValue };
+    localStorage.setItem("user", JSON.stringify(data));
+    
+}
