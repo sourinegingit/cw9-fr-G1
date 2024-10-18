@@ -25,20 +25,25 @@ function changeFormTheme(form) {
 submit.addEventListener("click", (e) => {
   e.preventDefault();
   updateUser();
- clearForm(form);
+  clearForm(form);
 });
 
 function clearForm(form) {
   form.reset();
 }
 
-
 function updateUser() {
-    let nameValue = inputName.value;
-    let passwordValue = inputPassword.value;
-    let emailValue = inputEmail.value;
-  
-    let data = { name: nameValue, password: passwordValue, email: emailValue };
-    localStorage.setItem("user", JSON.stringify(data));
-    
+  let nameValue = inputName.value;
+  let passwordValue = inputPassword.value;
+  let emailValue = inputEmail.value;
+
+  let data = { name: nameValue, password: passwordValue, email: emailValue };
+  localStorage.setItem("user", JSON.stringify(data));
 }
+function setCookie(name, value, hours) {
+  const expires = new Date(Date.now() + hours * 60 * 60 * 1000).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+let data = JSON.parse(localStorage.getItem("user"));
+console.log(data);
+setCookie("myweb", JSON.stringify(data), 24);

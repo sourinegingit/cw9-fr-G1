@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html
+  lang="fa"
+  dir="rtl"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>فرم ثبت نام</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Rubik";
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #111; /* پس‌زمینه تاریک پیش‌فرض */
+        color: white;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .form-container {
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        width: 300px;
+        text-align: right; /* راست‌چین */
+        background: #222; /* پس‌زمینه فرم */
+      }
+      h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #444; /* رنگ حاشیه */
+        border-radius: 5px;
+        background: gray; /* پس‌زمینه ورودی */
+        color: white;
+      }
+      input::placeholder {
+        color: #bbb; /* رنگ placeholder */
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #e91e63; /* رنگ دکمه */
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: "Rubik";
+      }
+      .error {
+        color: red;
+        font-size: 0.9em;
+        margin-top: 10px;
+      }
+      /* استایل برای تم روشن */
+      body.light {
+        background-color: white; /* پس‌زمینه روشن */
+        color: black; /* رنگ متن روشن */
+      }
+      .form-container.light {
+        background-color: #f2f2f2; /* پس‌زمینه فرم روشن */
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        background: white; /* پس‌زمینه ورودی روشن */
+        color: black; /* رنگ متن ورودی روشن */
+      }
+      input::placeholder {
+        color: #a8a3a3; /* رنگ placeholder در تم روشن */
+      }
+      .light button {
+        background-color: rgb(46, 150, 224); /* رنگ دکمه در تم روشن */
+      }
+    </style>
+  </head>
+  <body class="dark">
+    <div class="form-container">
+      <h2>فرم ثبت نام</h2>
+      <label for="name">نام</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="نام خود را وارد کنید"
+        required
+      />
+      <label for="email">ایمیل</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="ایمیل خود را وارد کنید"
+        required
+      />
+      <label for="password">رمز عبور</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="رمز عبور خود را وارد کنید"
+        required
+      />
+      <label for="confirmPassword">تکرار رمز عبور</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        placeholder="تکرار رمز عبور"
+        required
+      />
+      <button id="submit">ثبت نام</button>
+      <div
+        id="errorMessages"
+        class="error"
+      ></div>
+      <button
+        class="toggle-button"
+        id="toggleButton"
+      >
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+
+    <script>
+
+    </script>
+  </body>
+</html>
