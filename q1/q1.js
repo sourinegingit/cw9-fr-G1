@@ -1,5 +1,7 @@
 const icon = document.querySelector(".icon");
 const form = document.querySelector(".form");
+
+let submit = document.getElementById("submit");
 icon.addEventListener("click", () => {
   changeFormTheme(form);
 });
@@ -16,3 +18,13 @@ function changeFormTheme(form) {
     localStorage.setItem("theme", "dark");
   }
 }
+
+submit.addEventListener("click", (e) => {
+    e.preventDefault();
+  let name = document.getElementById("name").value;
+  let password = document.getElementById("pss").value;
+  let email = document.getElementById("email").value;
+  let data={name,password,email};
+  localStorage.setItem("user",JSON.stringify(data));
+  
+});
