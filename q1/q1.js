@@ -38,12 +38,15 @@ function updateUser() {
   let emailValue = inputEmail.value;
 
   let data = { name: nameValue, password: passwordValue, email: emailValue };
-  localStorage.setItem("user", JSON.stringify(data));
+
+  let dataObj = localStorage.setItem("user", JSON.stringify(data));
+  return dataObj;
 }
 function setCookie(name, value, hours) {
   const expires = new Date(Date.now() + hours * 60 * 60 * 1000).toUTCString();
   document.cookie = `${name}=${value}; expires=${expires}; path=/`;
 }
+let obj = localStorage.getItem("dataObj");
 let data = JSON.parse(localStorage.getItem("user"));
-console.log(data);
-setCookie("myweb", JSON.stringify(data), 24);
+// console.log(data);
+setCookie("myweb", data, 24);
