@@ -1,0 +1,97 @@
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>تا تموم نشده بخر!استیکر لپ تاپ </p>
+        <span>تومان۶۰۰۰</span>
+        <button>خرید</button>
+    </div>
+    
+</body>
+</html> -->
+html
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پنجره تبلیغاتی</title>
+<style>
+#adPopup {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+border: 1px solid #ccc;
+padding: 20px;
+z-index: 1000;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+z-index: 999;
+}
+.close-button {
+background-color: #f44336;
+border: none;
+color: white;
+padding: 10px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="overlay"></div>
+<div id="adPopup">
+<h2>تبلیغ!</h2>
+<p>شما یک تبلیغ را مشاهده می‌کنید.</p>
+<button class="close-button" id="closeButton">بستن</button>
+</div>
+
+<script>
+let adDisplayed = false;
+
+function showAd() {
+if (!adDisplayed) {
+document.getElementById('overlay').style.display = 'block';
+document.getElementById('adPopup').style.display = 'block';
+adDisplayed = true;
+
+setTimeout(() => {
+if (adDisplayed) {
+hideAd();
+}
+}, 20000); // 20 ثانیه
+}
+}
+
+function hideAd() {
+document.getElementById('overlay').style.display = 'none';
+document.getElementById('adPopup').style.display = 'none';
+adDisplayed = false;
+}
+
+document.getElementById('closeButton').onclick = function() {
+hideAd();
+}
+
+window.onload = function() {
+setTimeout(showAd, 5000); // 5 ثانیه
+}
+</script>
+
+</body>
+</html>
